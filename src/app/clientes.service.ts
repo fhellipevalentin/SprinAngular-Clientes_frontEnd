@@ -16,16 +16,16 @@ salvar (cliente: Cliente) : Observable<Cliente> {
 
 }
 
-/*getClientes() : Observable<Cliente[]> {
-  return []; 
-}*/
+getClientes() : Observable<Cliente[]> {
+  return this.http.get<Cliente[]>('http://localhost:8080/api/clientes'); 
+}
 
-getClientes() : Cliente[] {
+/*getClientes() : Cliente[] {
   let cliente = new Cliente();
   cliente.id = 1;
   cliente.nome = 'Scruto';
   cliente.dataCadastro = '18/04/2020';
   cliente.cpf = '12345678901';
   return [cliente];
-}
+} ---- Mock*/
 }
