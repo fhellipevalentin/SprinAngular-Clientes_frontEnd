@@ -4,7 +4,8 @@ import { Cliente } from '../cliente';
 
 import { ClientesService } from '../../clientes.service'
 import { HttpErrorResponse } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-clientes-form',
@@ -12,16 +13,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./clientes-form.component.css']
 })
 export class ClientesFormComponent implements OnInit {
-
+  
   cliente : Cliente;
   success: boolean = false;
   errors!: String[];
-
-  constructor( private service: ClientesService, private router: Router) {
+  id!: number;
+  
+  constructor( private service: ClientesService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.cliente = new Cliente();
   }
     
   ngOnInit(): void {
+    let params : Observable<Params> = this.activatedRoute.params;
+    params.subscribe( urlParams => {
+      this.id = urlParams['id'];
+      if(this.id) {
+        this.service.getClienteById(this.id)
+        .subscribe(
+          response => this.cliente = response,
+          HttpErrorResponse => this.cliente = new Cliente()
+          )}
+    })
   }
   
   onSubmit() {
