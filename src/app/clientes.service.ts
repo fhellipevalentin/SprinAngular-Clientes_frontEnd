@@ -16,6 +16,11 @@ salvar (cliente: Cliente) : Observable<Cliente> {
 
 }
 
+atualizar (cliente: Cliente) : Observable<any> {
+  return this.http.put<Cliente>(`http://localhost:8080/api/clientes/${cliente.id}`, cliente)
+
+}
+
 getClientes() : Observable<Cliente[]> {
   return this.http.get<Cliente[]>('http://localhost:8080/api/clientes'); 
 }
