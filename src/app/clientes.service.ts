@@ -21,6 +21,11 @@ atualizar (cliente: Cliente) : Observable<any> {
 
 }
 
+deletar (cliente: Cliente) : Observable<any> {
+  return this.http.delete<any>(`http://localhost:8080/api/clientes/${cliente.id}`)
+
+}
+
 getClientes() : Observable<Cliente[]> {
   return this.http.get<Cliente[]>('http://localhost:8080/api/clientes'); 
 }
