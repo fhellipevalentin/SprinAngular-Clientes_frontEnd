@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
@@ -19,7 +20,15 @@ export class LoginComponent{
   constructor(private router: Router, private authService: AuthService) { }
 
   onSubmit() {
-    this.router.navigate(['/home']);
+    this.authService
+        .tentarLogar(this.username, this.password)
+        .subscribe(response => {
+          console.log(response)
+          this.router.navigate(['/home']);
+        }, HttpErrorResponse => {
+          this.errors = ['Usuário e/ou senha incorreto(s).'];
+        })
+    
   }
 
   preparaCadastrar(event: any){
