@@ -51,7 +51,21 @@ export class AuthService {
       'Content-Type': 'application/x-www-form-urlencoded' 
     }
     return this.http.post(this.tokenURL, params.toString(), { headers });
-  } 
+  }
+
+  encerrarSessao() {
+    localStorage.removeItem('access_token');
+  }
+
+  getUsuarioAutenticado() {
+    const token = this.obterToken();
+    if (token) {
+      const usuario =this.jwtHelper.decodeToken(token).user_name
+      return usuario;
+    } else {
+      return null;
+    }
+  }
 }
 
   
