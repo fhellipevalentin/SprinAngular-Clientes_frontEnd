@@ -1,27 +1,29 @@
 # ClientesApp
+Aplicação de adição, seleção, atualização e deleção de clientes relacionados com seus serviços feita em Angular, utilizando Bootstrap. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
+## Descrição:
+A aplicação se encontra de modo que possa ser vista em tempo real através do link: https://fhellipevalentin.github.io/SprinAngular-Clientes_frontEnd/home - mas que precisa-se de um tempo para testar todas as requisições pela primeira vez, pois, a base de dados e a API back-end estão hospedados no site da Heroku. E o código fonte da API Back-End se encontra através do site do github também: https://github.com/fhellipevalentin/SpringAngular-Clientes
 
-## Development server
+## Tela de Login:
+![image](https://user-images.githubusercontent.com/65087845/195135529-d0bcaa23-7141-4585-8ced-4290a1cedc6c.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tela de Cadastro:
+![image](https://user-images.githubusercontent.com/65087845/195135701-de646f3c-6334-47c8-b9ef-d4d152015269.png)
 
-## Code scaffolding
+## Tela de Listagem de Clientes:
+![image](https://user-images.githubusercontent.com/65087845/195135877-06352315-ff8c-465c-8547-5a52a7da327a.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tela de Cadastro de Clientes
+![image](https://user-images.githubusercontent.com/65087845/195136997-5fb07042-a09d-4959-a041-059d83514e22.png)
 
-## Build
+## Tela de Seleção de Serviços via filtro
+![image](https://user-images.githubusercontent.com/65087845/195137636-f228015e-94c9-44d3-9856-b15213de9a10.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Tela de Cadastro de Serviços baseado na seleção dos clientes já cadastrados
+![image](https://user-images.githubusercontent.com/65087845/195137943-2a3af466-197c-46c6-8758-454b37dee11d.png)
 
-## Running unit tests
+## Confirmações através das requisições feitas
+![image](https://user-images.githubusercontent.com/65087845/195138125-e6d63dc5-b1aa-491e-8b23-237730a1ec89.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Considerações finais
+Este código full-stack foi feito através das instruções dadas pelo professor Dougllas através do site da Udemy.
